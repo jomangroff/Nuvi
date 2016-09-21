@@ -1,0 +1,185 @@
+html, body {
+  height: 100%;
+}
+
+.gif-container {
+  position: relative;
+  height: 100%;
+}
+
+.loading-gif {
+  height: 100px;
+  width: 100px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin: -50px 0 0 -50px;
+}
+
+.searchBox {
+  width: 45%;
+  height: 40px;
+  border: 1px solid;
+  display: flex;
+  margin: auto;
+  font-size: 15px;
+  background-color: lightgray;
+}
+
+::-webkit-input-placeholder {
+   font-size: 20px;
+}
+:-moz-placeholder {
+  font-size: 20px;
+}
+::-moz-placeholder {
+  font-size: 20px;
+}
+:-ms-input-placeholder {
+  font-size: 20px;
+}
+
+.second-container {
+  height: 500px;
+  width: 80%;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  margin: auto;
+  padding: 10px;
+}
+
+.second-left-section {
+  height: 500px;
+  width: 40%;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid;
+}
+
+.left-userinfo {
+  width: 70%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  border: 1px solid;
+}
+
+.right-userinfo {
+  width: 30%;
+  height: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;;
+  align-items: center;
+}
+
+.second-right-section {
+  height: 480px;
+  width: 60%;
+  border: 1px solid;
+}
+
+.second-post {
+  height: 240px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid;
+}
+
+.second-message-container {
+  height: 250px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.second-message {
+  height: 85px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.second-userinfo {
+  height: 30%;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  border: 1px solid;
+}
+
+.second-important-info {
+  height: 10%;
+  width: 85%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 0 auto;
+}
+
+#important {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+#important button {
+  background-color: lightblue;
+}
+
+.second-comments {
+  height: 75px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.second-charts {
+  height: 60%;
+  width: 100%;
+  border: 1px solid;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.comment-button {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.comment-button input {
+  background-color: lightgray;
+  height: 25px;
+}
+
+.comment-button button {
+  height: 32px;
+  width: 20%;
+  background-color: lightblue;
+}
+.input-box {
+  width: 80%;
+  height: 30px;
+  font-size: 15px;
+}
+
+
+#bar {
+  display: block;
+  width: 80%;
+  height: 600px;
+  padding-top: 50px;
+}

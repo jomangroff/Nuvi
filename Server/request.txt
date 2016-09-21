@@ -1,0 +1,19 @@
+module.exports = {
+  PORT: 3000 || prcess.env.PORT,
+  MONGO_URI: process.env.MONGO_LABS_URI,
+  SESSION_SECRET: 'NUVI-12345'
+};
+
+
+
+//I am not sure what you meant by "manually" send a request.  I completed to my understanding//
+
+
+var xhttp = new XMLHttpRequest();
+xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+      return response;
+    }
+};
+xhttp.open("GET", "https://nuvi-challenge.herokuapp.com/activities", true);
+xhttp.send("Set-cookie:Session=NUVI-12345");

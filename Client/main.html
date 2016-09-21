@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html ng-app='nuvi'>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="../styles/reset.css" charset="utf-8">
+        <link rel="stylesheet" href="./main.css" media="screen" title="no title">
+        <link href="https://fonts.googleapis.com/css?family=Merriweather|Oswald" rel="stylesheet">
+        <title>NUVI</title>
+    </head>
+    <body ng-controller='mainController'>
+        <section ng-if="loading" class="gif-container">
+            <img class="loading-gif" src="../Server/loading-circle.gif" alt=""/>
+        </section>
+
+        <main ng-if="!loading">
+
+
+            <canvas id="bar" class="chart chart-bar" chart-data="data" chart-labels="labels">
+              chart-series="series"
+            </canvas>
+
+
+            <input class="searchBox" type="text" name="name" placeholder="Search Actors... Or Anything Else" ng-model="searchBox">
+
+            <section class="second-container" ng-repeat="event in nuvi.data | filter:searchBox">
+                <div class="second-left-section">
+                    <div class="second-userinfo">
+                        <div class="left-userinfo">
+                            {{event.actor_avator}}
+                        </div>
+                        <div class="right-userinfo">
+                            <div class="">
+                                {{event.actor_name}}
+                            </div>
+                            <div class="">
+                                {{event.actor_username}}
+                            </div>
+                        </div>
+                    </div>
+                    <div class="second-important-info">
+                        <div id="important">
+                            {{event.provider}}
+                        </div>
+                        <span id="important">|</span>
+                        <div id="important">
+                            {{event.activity_date}}
+                        </div>
+                        <span id="important">|</span>
+
+                        <div id="important">
+                            {{event.activity_likes}}
+                        </div>
+                        <div id="important">
+                            <button ng-click="like(event)">
+                                <span ng-show="event.liked">Unlike</span>
+                                <span ng-show="!event.liked">Like</span>
+                            </button>
+                        </div>
+                        <span id="important">|</span>
+                        <div id="important">
+                            {{event.activity_shares}}
+                        </div>
+                        <div id="important">
+                        <button ng-click="share(event)">
+                            <span ng-show="!event.shared">Share</span>
+                            <span ng-show="event.shared">Unshare</span>
+                        </button>
+                      </div>
+                    </div>
+                    <div class="second-charts">
+                      <span>
+                        Analytics and Data ideally here
+                      </span>
+                    </div>
+                </div>
+                <div class="second-right-section">
+                    <div class="second-post">
+                        {{event.activity_url}}
+                    </div>
+                    <div class="second-message-container">
+                        <div class="second-message">
+                            {{event.activity_message}}
+                        </div>
+                        <div class="second-comments">
+                            {{event.activity_comments}}
+
+                        </div>
+                        <div class="comment-button">
+                            <input type="text" placeholder="Add Comment" value="" class="input-box" ng-model="event.reply">
+                            <button ng-show="event.reply" ng-click="comment(event)">Reply</button>
+                        </div>
+                    </div>
+                  </div>
+
+                </section>
+
+
+                <!-- {{nuvi}} -->
+
+            </main>
+
+            <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+            <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.js"></script>
+            <script type="text/javascript" src="https://cdn.jsdelivr.net/lodash/4.16.0/lodash.min.js"></script>
+            <script src="../node_modules/chart.js/dist/Chart.min.js"></script>
+            <script src="../node_modules/angular-chart.js/dist/angular-chart.min.js"></script>
+            <script type="text/javascript" src="./app.js"></script>
+            <script type="text/javascript" src="./jquery.js"></script>
+            <script type="text/javascript" src="./mainController.js"></script>
+            <script type="text/javascript" src="./mainService.js"></script>
+        </body>
+    </html>
